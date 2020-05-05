@@ -11,7 +11,7 @@ CUDA_VISIBLE_DEVICES=2 python run_language_modeling.py --output_dir=output/mlm/g
 ```
 
 ## 2020-05-05
-* fix: select/use padding embedding for padding positions
+* fix: select/use padding embedding for padding positions instead of zero-vector
 * in addition to mask position prediction, implement swap and keep position prediction to mimic Bert masking more correctly
 * this also allows to not require predicting these positions during evaluation (to have the same setting as for training), but use mlm masking implemented in huggingface/transformers [here](https://github.com/huggingface/transformers/blob/8e67573a640e4649cc6c2f98d9402b1f6b8bdadf/src/transformers/data/data_collator.py#L111-L144)
 * start run `@server=dfki-gpu9` `@screen=guidebert2`: `May05_12-52-11_serv-9209`
